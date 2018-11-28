@@ -43,8 +43,11 @@ else:
     while (check_continue != ""):
         check_continue = input("Press Enter to continue")
 
-
-    print("x =",((c-b)/a))
+    print("The solution is:")
+    if((c-b)%a == 0):
+        print("x =",(c-b)/a)
+    else:
+        print("x =",(c-b),"/",a)
  
     check = input("Would you like to check this solution? (Y or N)")
     if (check == "Y"):
@@ -53,4 +56,5 @@ else:
         print((c-b),"+",b,"=",c)
         print(c,"=",c)
         print("It works!")
+
 
