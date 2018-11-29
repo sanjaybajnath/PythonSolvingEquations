@@ -1,10 +1,10 @@
 #Sanjay Bajnath               11/26/18
 # Python Project 1 - Solving Equations
 
-
+print("Hello. This program solves equations in the form ax+b=c.")
 correct = "N"
 #This while loop is used to verify that the correct equation is being solved.
-while (correct == "N"):
+while (correct == "N" or correct =="n"):
     #user_input is the string of numbers that the user inputs.
     user_input = input("Enter a, b, and c, separated by commas. ")
     #numbers_list turns the string into an array and removes the commas.
@@ -60,7 +60,7 @@ else:
         print("x =",(c-b),"/",a)
  
     check = input("Would you like to check this solution? (Y or N)")
-    if (check == "Y"):
+    if (check == "Y" or check == "y"):
         print(a,"x +",b," = ",c)
         if((c-b)%a == 0):
             print(a,"(",((c-b)/a) ,") +",b," = ",c)
