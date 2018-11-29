@@ -10,9 +10,12 @@ while (correct == "N" or correct =="n"):
     #numbers_list turns the string into an array and removes the commas.
     numbers_list = user_input.split(",")
     #a,b, and c are the numbers from the array, without whitespace.
-    a = float(numbers_list[0].strip())
-    b = float(numbers_list[1].strip())
-    c = float(numbers_list[2].strip())
+    a1 = (numbers_list[0].replace(" ",""))
+    b1 = (numbers_list[1].replace(" ",""))
+    c1 =(numbers_list[2].replace(" ",""))
+    a= float(a1)
+    b = float(b1)
+    c = float(c1)
     #If any of the numbers are divisible by 1, they are integers.
     if(a%1==0):
         a = int(a)
@@ -70,3 +73,4 @@ else:
         print((c-b),"+",b,"=",c)
         print(c,"=",c)
         print("It works!")
+
