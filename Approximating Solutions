@@ -1,0 +1,33 @@
+#Python Task - Approximating Solutions
+
+def F(n):
+    f = c - (a*n)
+    f /= b
+    return(f)
+
+user_input = input("Enter a, b, and c.")
+user_input = user_input.replace(" ","")
+num_list = user_input.split(",")
+
+for i in range(len(num_list)):
+    num_list[i] = float(num_list[i])
+
+a = num_list[0]
+b = num_list[1]
+c = num_list[2]
+
+print(a,"x +",b,"y =",c)
+
+
+step = int(input("Enter a step size"))
+
+guess = float(input("Enter an inital guess."))
+
+print(F(guess))
+
+while(abs(F(guess))> step):
+    if( F(guess) >0):
+        guess +=step
+    if (F(guess) <0):
+        guess -= step
+
