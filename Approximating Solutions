@@ -48,8 +48,10 @@ step = float(input("Enter a step size: "))
 guess = float(input("Enter an inital guess: x ="))
 initial_guess = guess
 steps_count = 0
-#The while loop continues until it finds a solution that is off by no more than half of a step size in either direction.
-while(abs(c-F(guess)) > step/2):
+#difference is the difference between F(guess) and c.
+difference = abs(c-F(guess))
+#The while loop continues until the difference between F(guess) and c is less than or equal to half of a step size.
+while(difference > step/2):
     if(F(guess) > c):                           #The output of the function is too high when the current guess is the input.
         if( F(guess + step) > F(guess)):        #F is increasing, so the current guess is too far to the right.
             guess -=step
@@ -60,8 +62,11 @@ while(abs(c-F(guess)) > step/2):
             guess +=step
         else:                                   #F is decreasing, so the current guess is too far to the right.
             guess -= step
+    if(F(guess) < c and F(guess+step)>c): 
+        
     steps_count += 1
 print("Your equation was",a,"x +",b," =",c)
 print("The step size was", step)
 print("The estimated solution is", guess)
 print("This program found the estimated solution in",steps_count,"steps.")
+
